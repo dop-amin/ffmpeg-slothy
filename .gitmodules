@@ -1,0 +1,6 @@
+[submodule "slothy"]
+	path = slothy
+	url = git@github.com:dop-amin/slothy.git
+[submodule "FFmpeg"]
+	path = FFmpeg
+	url = git@github.com:dop-amin/FFmpeg.git
