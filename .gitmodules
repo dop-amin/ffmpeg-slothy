@@ -4,3 +4,6 @@
 [submodule "FFmpeg"]
 	path = FFmpeg
 	url = git@github.com:dop-amin/FFmpeg.git
+[submodule "pqax"]
+	path = pqax
+	url = git@github.com:dop-amin/pqax.git
