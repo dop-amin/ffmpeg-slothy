@@ -1,0 +1,5 @@
+.ruff_cache
+.claude
+nix
+bench_results
+checkasm_results
