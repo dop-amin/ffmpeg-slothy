@@ -4,9 +4,6 @@
 [submodule "FFmpeg"]
 	path = FFmpeg
 	url = git@github.com:dop-amin/FFmpeg.git
-[submodule "pqax"]
-	path = pqax
-	url = git@github.com:dop-amin/pqax.git
 [submodule "test-profiles"]
 	path = test-profiles
 	url = https://github.com/phoronix-test-suite/test-profiles.git
