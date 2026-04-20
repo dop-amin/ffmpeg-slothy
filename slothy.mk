@@ -61,6 +61,9 @@ CONFIGURE_COMMON := \
 # Extra flags for the optimized variant
 CONFIGURE_MIN_EXTRA := --extra-cflags="-DH264_SLOTHY_A55_OPT"
 
+# Optional debug symbols — override with: make -f slothy.mk ... DEBUG=1
+DEBUG_FLAGS := $(if $(DEBUG),--extra-cflags="-g" --extra-ldflags="-g")
+
 # ---------------------------------------------------------------------------
 # Phony targets
 # ---------------------------------------------------------------------------
@@ -80,7 +83,7 @@ build: build-baseline build-min
 
 build-baseline:
 	@echo "=== Configuring baseline ==="
-	cd $(FFMPEG_DIR) && ./configure $(CONFIGURE_COMMON)
+	cd $(FFMPEG_DIR) && ./configure $(CONFIGURE_COMMON) $(DEBUG_FLAGS)
 	@echo "=== Building baseline ==="
 	$(MAKE) -C $(FFMPEG_DIR) -j$(JOBS)
 	cp $(FFMPEG_DIR)/ffmpeg $(FFMPEG_BASELINE)
@@ -90,7 +93,7 @@ build-baseline:
 
 build-min:
 	@echo "=== Configuring min (SLOTHY A55 + spill removal) ==="
-	cd $(FFMPEG_DIR) && ./configure $(CONFIGURE_COMMON) $(CONFIGURE_MIN_EXTRA)
+	cd $(FFMPEG_DIR) && ./configure $(CONFIGURE_COMMON) $(CONFIGURE_MIN_EXTRA) $(DEBUG_FLAGS)
 	@echo "=== Building min ==="
 	$(MAKE) -C $(FFMPEG_DIR) -j$(JOBS)
 	cp $(FFMPEG_DIR)/ffmpeg $(FFMPEG_MIN)
