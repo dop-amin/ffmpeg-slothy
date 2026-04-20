@@ -20,7 +20,7 @@ from pathlib import Path
 
 BINARIES = {
     "baseline": "./checkasm_baseline",
-    "min":      "./checkasm_min_noidct",
+    "min":      "./checkasm_min",
 }
 
 # All available h264 groups in checkasm
